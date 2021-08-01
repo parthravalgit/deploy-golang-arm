@@ -9,16 +9,16 @@ stages:
     CGO_ENABLED: '0'      # Disable cgo to get a static binary
     GOOS: 'linux'
     GOARCH: 'amd64'
-#   jobs:
-#   - job: BuildTestBackend
-#     displayName: 'Build and Test Go Backend'
-#     pool:
-#       vmImage: 'Ubuntu 18.04'
-#     steps:
-#     - task: GoTool@0
-#       inputs:
-#         version: $(GOVERSION)
-#       displayName: 'Install and select Go version $(GOVERSION)'
+  jobs:
+  - job: BuildTestBackend
+    displayName: 'Build and Test Go Backend'
+    pool:
+      vmImage: 'Ubuntu 18.04'
+    steps:
+    - task: GoTool@0
+      inputs:
+        version: $(GOVERSION)
+      displayName: 'Install and select Go version $(GOVERSION)'
 
 #     - script: |
 #         # Get tools for converting Go's test reports
